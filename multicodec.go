@@ -9,11 +9,6 @@ import (
 	"github.com/ipld/go-ipld-prime"
 )
 
-var (
-	_ ipld.Decoder = Decode
-	_ ipld.Encoder = Encode
-)
-
 func Decode(na ipld.NodeAssembler, r io.Reader) error {
 	err := Unmarshal(na, json.NewDecoder(r), true)
 	if err != nil {
